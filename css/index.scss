@@ -1,0 +1,166 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+ul li{list-style: none}
+a{text-decoration: none}
+html{
+    font-size: 62.5%;
+}
+//@mixin pos($p:absolute){
+//  position: $p;
+//}
+//@mixin setheader($w,$h,$src){
+//   @include pos();
+//   width: $w;
+//   height: $h;
+//   background: url($src);
+//   background-size: 100% 100%;
+//   top: 1.3rem;
+//}
+html,body,.box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 4.4rem;
+    background: #E4366B;
+    border-bottom: 1px solid black;
+     position: relative;
+    text-align: center;
+    a{
+        width: 2.9rem;
+        height: 2.3rem;
+        background: url(../imgs/fanhui_03.jpg);
+        background-size:100% 100%;
+        position: absolute;
+        left: .8rem;
+        top: 1.4rem;
+    }
+     label{
+            line-height: 4.3rem;
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: white;
+          }
+    }
+.content{
+    -webkit-flex-grow:1;
+    overflow: hidden;
+        dl{
+            padding: 1.5rem;
+            border-bottom: 1px solid #CDCDCD;
+            display: flex;
+            dt{
+                width: 30%;
+                img{
+                    width: 100%;
+                }
+            }
+            dd{
+                padding-left: 1.2rem;
+                position: relative;
+                a:nth-child(2){
+                   width: 1.5rem;
+                   height: 1.9rem; 
+                   position: absolute;
+                   right: -4.8rem;
+                   top: -.2rem;
+                   img{
+                       width: 100%;
+                   }
+                   
+                }
+                 a:last-child{
+                     display: block;
+                   width: 5.9rem;
+                   height: 2.8rem; 
+                   position: absolute;
+                    left: 8.2rem;
+                   top: 4.6rem;
+                   img{
+                       width: 100%;
+                   }
+                   
+                }
+                
+                p{
+                    font-size: 1.3rem;
+                    font-weight:bold;
+                    &:first-child{
+                        a{
+                            color: #222;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                
+            }  
+        }   
+    }
+    
+ @mixin lix($w,$h,$url,$top){
+  a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    span{
+      display: block;
+      &:nth-child(1){
+        width: $w;
+        height: $h;
+        background: url($url);
+        background-size: 100% 100%;
+        margin: 0 auto;
+        margin-top: $top;
+      }
+      &:nth-child(2){
+        width: 100%;
+        position: absolute;
+        bottom: 0.3rem;
+        left: 0;
+        text-align: center;
+      }
+    }
+  }
+}
+footer{
+  width: 100%;
+  height: 4.9rem;
+  background: #484852;
+  ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    li{
+      width: 100%;
+      -webkit-justify-content: space-between;
+      position: relative;
+      &:nth-child(1){
+        @include lix(2.4rem,2.6rem,"../imgs/foo-1_07.jpg",0.5rem)
+      }
+      &:nth-child(2){
+        @include lix(2.5rem,2.1rem,"../imgs/foo-2_13.jpg",0.8rem)
+      }
+      &:nth-child(3){
+        @include lix(2.6rem,2.4rem,"../imgs/foo-3_10.jpg",0.7rem)
+      }
+      &:nth-child(4){
+        @include lix(2.6rem,2.3rem,"../imgs/rem_10.jpg",0.7rem)
+      }
+      &:nth-child(5){
+        @include lix(2.4rem,1rem,"../imgs/boll_19.jpg",1.7rem)
+      }
+
+    }
+  }
+}
